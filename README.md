@@ -1,5 +1,5 @@
 # leaflet-react
-Proyecto de ejemplo de leaftlet, geojson y react
+Project example for leaftlet, geojson y react
 
 ## Development
 ```
