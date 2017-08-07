@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 
@@ -125,6 +126,14 @@ module.exports = {
             discardComments: { removeAll: true },
           },
           canPrint: true,
+        }),
+        new CopyWebpackPlugin([
+          { from: './app/src/images', to: path.resolve(DIST_FOLDER, './images') },
+          { from: './manifest.yml', to: DIST_FOLDER },
+          { from: './Staticfile', to: DIST_FOLDER },
+          { from: './app/index.html', to: DIST_FOLDER },
+        ], {
+          copyUnmodified: true,
         }),
       ], // plugins
   cache: false,
