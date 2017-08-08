@@ -1,6 +1,6 @@
 # Contribution
 
-We are going to base our Github practices on [DG's Github Practices](ttp://wiki.digitalglobe.com/display/GitHub/GitHub+at+DigitalGlobe).
+We are going to base our Github practices on [DG's Github Practices](http://wiki.digitalglobe.com/display/GitHub/GitHub+at+DigitalGlobe).
 
 This is our internal practices:
 
