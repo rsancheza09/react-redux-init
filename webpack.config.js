@@ -10,10 +10,11 @@ const DEBUG = process.env.NODE_ENV !== 'production';
 // > Root App
 const APP_FOLDER = path.resolve(__dirname, './app');
 // > Dist
-const DIST_FOLDER = path.resolve(APP_FOLDER, './dist');
+const DIST_FOLDER = path.resolve(__dirname, './dist');
 const DIST_FOLDER_STYLE = path.resolve(DIST_FOLDER, './style');
 
-const DIST_FILE_JS_BUNDLE = 'js/bundle.js';
+const DIST_FILE_JS_BUNDLE_NAME = 'bundle.js';
+const DIST_FILE_JS_BUNDLE = `js/${DIST_FILE_JS_BUNDLE_NAME}`;
 const DIST_FILE_CSS_BUNDLE_NAME = 'bundle.css';
 const DIST_FILE_CSS_BUNDLE = `style/${DIST_FILE_CSS_BUNDLE_NAME}`;
 // > Src
