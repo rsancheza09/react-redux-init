@@ -33,3 +33,5 @@ The messages should be explicit, that everybody developer or not can understand 
 	- Go to your branch and make a new pull request.
 	- Assign the PR to your partner in order to make the code review.
 9. After the Code Review, merge the code into **develop**, and remove the feature branch.
+
+Note: For deployments we are going to create tags.
