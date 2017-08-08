@@ -132,7 +132,6 @@ module.exports = {
           { from: './app/src/images', to: path.resolve(DIST_FOLDER, './images') },
           { from: './manifest.yml', to: DIST_FOLDER },
           { from: './Staticfile', to: DIST_FOLDER },
-          { from: './app/index.html', to: DIST_FOLDER },
         ], {
           copyUnmodified: true,
         }),
