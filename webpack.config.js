@@ -144,6 +144,7 @@ module.exports = {
   devServer: {
     contentBase: APP_FOLDER,
     compress: true,
+    historyApiFallback: true,
     inline: true,
     port: 7070,
   },
