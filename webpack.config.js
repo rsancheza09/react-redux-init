@@ -19,7 +19,7 @@ const DIST_FILE_CSS_BUNDLE_NAME = 'bundle.css';
 const DIST_FILE_CSS_BUNDLE = `style/${DIST_FILE_CSS_BUNDLE_NAME}`;
 // > Src
 const SRC_FOLDER = path.resolve(APP_FOLDER, './src');
-const SRC_FILE_JS_APP = path.resolve(SRC_FOLDER, './js/app');
+const SRC_FILE_JS_APP = path.resolve(SRC_FOLDER, './js/index');
 
 module.exports = {
 	// > JS Input / Output
@@ -83,6 +83,9 @@ module.exports = {
   plugins:
     DEBUG ?
       [
+        new webpack.DefinePlugin({
+          __DEV__: true,
+        }),
         // > Configure CSS Bundle file
         new ExtractTextPlugin({
           filename: DIST_FILE_CSS_BUNDLE,
@@ -99,6 +102,7 @@ module.exports = {
       ] :
       [
         new webpack.DefinePlugin({
+          __DEV__: false,
           'process.env': {
             NODE_ENV: JSON.stringify('production'),
           },
