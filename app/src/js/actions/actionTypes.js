@@ -1,0 +1,4 @@
+export const SET_SEARCH = 'SET_SEARCH';
+export const ERROR_SEARCH = 'ERROR_SEARCH';
+export const CHECK_ID_PROVIDED = 'CHECK_ID_PROVIDED';
+export const MAP_GENERATED = 'MAP_GENERATED';

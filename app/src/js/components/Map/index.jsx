@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import L from 'leaflet';
+
+import { checkIdProvided } from '../../actions';
 
 class Map extends Component {
   constructor(props) {
@@ -21,6 +24,7 @@ class Map extends Component {
       id: 'mapbox.streets',
     }).addTo(mymap);
     if (this.state.id !== 'no-id') {
+      this.props.checkIdProvided(this.state.id);
       const geoJSONObj = {
         type: 'FeatureCollection',
         features: [
@@ -81,6 +85,13 @@ Map.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  checkIdProvided: PropTypes.func.isRequired,
 };
 
-export default Map;
+const mapDispatchToProps = dispatch => ({
+  checkIdProvided(id) {
+    return dispatch(checkIdProvided(id));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Map);
